@@ -50,6 +50,11 @@ jobs:
       name: "$TRAVIS_TAG"
       on:
         tags: true
+    - provider: script
+      script: bash travis/deploy-wordpress.sh
+      skip_cleanup: true
+      on:
+        tags: true
 notifications:
   slack:
     rooms:
